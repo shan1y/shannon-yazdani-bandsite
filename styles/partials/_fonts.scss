@@ -1,0 +1,44 @@
+$font-stack: "Avenir Next";
+
+$background-color-footer: #323232;
+$text-color: #fff;
+$background-color-body: #afafaf;
+$secondary-mercury: #e1e1e1;
+$secondary-alabaster: #fafafa;
+$secondary-darkBlack: #000;
+
+$heading-two: 30px;
+
+body {
+  font-family: $font-stack;
+}
+
+@font-face {
+  font-family: $font-stack;
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"),
+    url("../../assets/Font/AvenirNextLTPro-Bold.ttf") format ("truetype"),
+    url("../../assets/Font/AvenirNextLTPro-Bold.woff") format ("woff"),
+    url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format ("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-stack;
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"),
+    url("../../assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype"),
+    url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"),
+    url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-stack;
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"),
+    url("../../assets/Font/AvenirNextLTPro-Demi.ttf") format("truetype"),
+    url("../../assets/Font/AvenirNextLTPro-Demi.woff") format("woff"),
+    url("../../assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}

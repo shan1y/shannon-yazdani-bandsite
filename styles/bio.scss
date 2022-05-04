@@ -1,0 +1,92 @@
+@use "./partials/fonts" as *;
+@use "./partials/reset" as *;
+
+.nav {
+  background-color: $background-color-footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 4rem;
+
+  &__title {
+    color: $text-color;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+  &__list {
+    color: $text-color;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.hero {
+  position: relative;
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    color: $text-color;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.main {
+  padding: 1rem;
+
+  &__image {
+    width: 100%;
+  }
+  &__image-subtitle {
+    font-weight: 700;
+  }
+
+  * {
+    padding-top: 1rem;
+  }
+
+  &__content--title {
+    padding-top: 2rem;
+  }
+}
+
+.gallery {
+  background-color: $secondary-alabaster;
+  &__title {
+    font-size: $heading-two;
+    padding-top: 1rem;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0rem;
+
+    * {
+      padding: 0 1rem 1rem 1rem;
+      width: 100%;
+    }
+
+    :first-child {
+      padding-top: 1rem;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color-footer;
+  color: $text-color;
+
+  &__col--group {
+    padding-left: 0rem;
+  }
+}
