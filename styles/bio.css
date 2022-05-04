@@ -30,6 +30,23 @@ ul {
   list-style-type: none;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
 input,
 button,
 textarea,
@@ -57,6 +74,9 @@ select {
 
 .hero {
   position: relative;
+  background-image: url("../assets/Images/hero-bio.jpg");
+  min-height: 45vh;
+  background-size: cover;
 }
 .hero__title {
   position: absolute;
@@ -64,10 +84,7 @@ select {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
-}
-.hero__image {
-  width: 100%;
-  height: auto;
+  padding-left: 1rem;
 }
 
 .main {
@@ -90,6 +107,7 @@ select {
   background-color: #fafafa;
 }
 .gallery__title {
+  padding-bottom: 1rem;
   font-size: 30px;
   padding-top: 1rem;
 }
@@ -100,12 +118,10 @@ select {
   flex-direction: row;
   margin: 0rem;
 }
-.gallery__container * {
+.gallery__image {
   padding: 0 1rem 1rem 1rem;
-  width: 100%;
-}
-.gallery__container :first-child {
-  padding-top: 1rem;
+  display: block;
+  width: 30rem;
 }
 
 .footer {
@@ -114,6 +130,33 @@ select {
   background-color: #323232;
   color: #fff;
 }
-.footer__col--group {
-  padding-left: 0rem;
+.footer__logo--mobile {
+  display: none;
+}
+.footer__col {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+.footer__col--email {
+  margin-bottom: 2rem;
+}
+.footer__title {
+  padding: 1rem;
+}
+.footer__icon {
+  height: 4rem;
+  padding: 1rem;
+}
+.footer__col--name, .footer__col--org {
+  font-weight: 700;
+}
+.footer__logo {
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+.footer__copyright {
+  padding: 2rem 0 2rem 0;
+  padding-left: 1rem;
 }/*# sourceMappingURL=bio.css.map */
