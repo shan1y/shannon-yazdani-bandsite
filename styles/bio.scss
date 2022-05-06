@@ -1,5 +1,8 @@
 @use "./partials/fonts" as *;
 @use "./partials/reset" as *;
+@use "./partials/typography" as *;
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
 
 .nav {
   background-color: $background-color-footer;
@@ -7,105 +10,210 @@
   flex-direction: column;
   justify-content: center;
   height: 4rem;
+  width: 100%;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 auto;
+  }
 
   &__title {
     color: $text-color;
     text-transform: uppercase;
     margin: 0 auto;
+
+    @include tablet {
+      margin: unset;
+      margin-left: 2rem;
+      width: 20%;
+      line-height: 4rem;
+    }
   }
   &__list {
     color: $text-color;
     display: flex;
     justify-content: space-evenly;
+
+    @include tablet {
+      width: 20%;
+      line-height: 4rem;
+      justify-content: space-between;
+    }
   }
 }
 
 .hero {
   position: relative;
   background-image: url("../assets/Images/hero-bio.jpg");
-  min-height: 45vh;
+  min-height: 22vh;
   background-size: cover;
+  width: 100%;
+
+  @include tablet {
+    min-height: 50vh;
+  }
 
   &__title {
     position: absolute;
     top: 50%;
     color: $text-color;
-    font-size: 24px;
-    font-weight: 700;
     padding-left: 1rem;
   }
 }
 
 .main {
-  padding: 1rem;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin-inline: auto;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__title {
+    max-width: 700;
+    padding-bottom: 1rem;
+  }
+  * {
+    padding-top: 1rem;
+  }
 
   &__image {
     width: 100%;
-  }
-  &__image-subtitle {
-    font-weight: 700;
+    margin: 0 auto;
+    padding-top: 0;
   }
 
-  * {
-    padding-top: 1rem;
+  &__image-subtitle {
+    font-weight: 700;
   }
 
   &__content--title {
     padding-top: 2rem;
   }
+
+  &__content--paragraph {
+    @include tablet {
+      display: flex;
+
+      &-top {
+        flex: 50%;
+        padding-right: 1rem;
+      }
+
+      &-bottom {
+        flex: 50%;
+        padding-left: 1rem;
+      }
+    }
+  }
 }
 
 .gallery {
   background-color: $secondary-alabaster;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin-inline: auto;
+  }
   &__title {
     padding-bottom: 1rem;
     font-size: $heading-two;
-    padding-top: 1rem;
   }
-  &__container {
+  &-image__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     margin: 0rem;
   }
 
   &__image {
-    padding: 0 1rem 1rem 1rem;
+    padding: 0.5rem;
     display: block;
-    // flex: 0 0 15rem;
-    width: 30rem;
+    width: 20rem;
+
+    @include tablet {
+      width: 15rem;
+    }
+
+    @include desktop {
+      width: 15rem;
+    }
   }
 }
 
 .footer {
-  display: flex;
-  flex-direction: column;
   background-color: $background-color-footer;
-  color: $text-color;
+
+  &__container {
+    flex-direction: column;
+    background-color: $background-color-footer;
+    color: $text-color;
+    max-width: 800px;
+    margin-inline: auto;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  &-header__container {
+    @include tablet {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__column--container {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 
   &__logo--mobile {
     display: none;
+
+    @include tablet {
+      display: unset;
+      margin-left: auto;
+    }
+  }
+
+  &__title {
+    @include tablet;
+    width: 30%;
   }
 
   &__col {
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    padding-left: 1rem;
+    width: 40%;
 
     &--email {
       margin-bottom: 2rem;
     }
   }
 
-  &__title {
-    padding: 1rem;
+  &__icons {
+    @include tablet {
+      display: flex;
+      width: 20%;
+      justify-content: space-between;
+    }
   }
 
   &__icon {
-    height: 4rem;
-    padding: 1rem;
+    height: 2rem;
+    width: 2rem;
   }
 
   &__col--name,
@@ -115,11 +223,13 @@
 
   &__logo {
     padding-top: 2rem;
-    padding-left: 1rem;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__copyright {
     padding: 2rem 0 2rem 0;
-    padding-left: 1rem;
   }
 }

@@ -1,0 +1,49 @@
+@use "./mixins" as *;
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+
+  @include tablet {
+    font-size: 36px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+  }
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+
+p {
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+}
