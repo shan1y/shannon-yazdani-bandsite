@@ -1,4 +1,15 @@
 @use "./mixins" as *;
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+  }
+}
 
 h2 {
   font-size: 24px;
@@ -8,18 +19,6 @@ h2 {
   @include tablet {
     font-size: 36px;
     line-height: 32px;
-    font-weight: 700;
-  }
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 32px;
-
-  @include tablet {
-    font-size: 60px;
-    line-height: 68px;
     font-weight: 700;
   }
 }
@@ -38,12 +37,48 @@ h3 {
 
 p {
   font-size: 13px;
-  line-height: 22px;
+  line-height: 18px;
   font-weight: 400;
+  padding: 0.5rem 0;
 
   @include tablet {
     font-size: 14px;
     line-height: 22px;
+    font-weight: 400;
+    padding: 2.25rem 0rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li,
+.nav__item {
+  color: white;
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.footer__icon {
+  height: 1.5rem;
+  width: 2rem;
+  padding-inline: 0.25rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.footer__col,
+.footer__copyright {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 400;
   }
 }
