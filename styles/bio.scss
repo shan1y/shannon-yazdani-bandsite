@@ -9,7 +9,7 @@
 }
 
 .nav {
-  background-color: $background-color-footer;
+  background-color: $primary-bandsite-black;
 
   &__container {
     display: flex;
@@ -29,7 +29,7 @@
   }
 
   &__title {
-    color: $text-color;
+    color: $primary-white;
     text-transform: uppercase;
     margin: 0 auto;
     margin-top: 1rem;
@@ -41,7 +41,7 @@
     }
   }
   &__list {
-    color: $text-color;
+    color: $primary-white;
     display: flex;
     justify-content: space-around;
     height: 100%;
@@ -60,6 +60,7 @@
     height: 100%;
     justify-content: center;
     @include hover {
+      color: $primary-white;
       font-weight: 600;
       border-bottom: 2px solid white;
     }
@@ -98,7 +99,7 @@
   }
 
   &__title {
-    color: $text-color;
+    color: $primary-white;
     z-index: 1;
   }
 }
@@ -220,12 +221,12 @@
 }
 
 .footer {
-  background-color: $background-color-footer;
+  background-color: $primary-bandsite-black;
 
   &__container {
     flex-direction: column;
-    background-color: $background-color-footer;
-    color: $text-color;
+    background-color: $primary-bandsite-black;
+    color: $primary-white;
     width: 100%;
     padding: 1rem;
 

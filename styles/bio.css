@@ -30,16 +30,13 @@ ul {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logo {
   font-size: 24px;
   text-transform: uppercase;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
 }
 
 h1 {
@@ -97,13 +94,12 @@ p {
 }
 
 a {
-  text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 li,
 .nav__item {
-  color: white;
+  color: #afafaf;
   font-size: 13px;
   line-height: 22px;
   font-weight: 400;
@@ -205,6 +201,7 @@ li,
   justify-content: center;
 }
 .nav__item:hover {
+  color: #fff;
   font-weight: 600;
   border-bottom: 2px solid white;
 }
