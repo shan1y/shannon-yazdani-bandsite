@@ -62,7 +62,12 @@
     @include hover {
       color: $primary-white;
       font-weight: 600;
+    }
+
+    &--active {
       border-bottom: 2px solid white;
+      color: $primary-white;
+      font-weight: 600;
     }
   }
 }
@@ -137,8 +142,10 @@
 
   &__image-subtitle {
     padding: 1rem 0;
+    font-weight: 700;
 
     &-author {
+      font-weight: 700;
       @include tablet {
         font-size: 1rem;
       }
@@ -147,6 +154,7 @@
 
   &__content-title {
     padding: 1.5rem 0 0.5rem 0;
+    font-weight: 600;
   }
 
   &__content-paragraph {
@@ -206,11 +214,10 @@
     display: block;
     width: 100%;
     transition: all 0.5s ease;
+    filter: grayscale(1000%);
 
     &:hover {
-      -webkit-filter: grayscale(100%);
-      -moz-filter: grayscale(100%);
-      filter: grayscale(1000%);
+      filter: grayscale(0%);
     }
 
     @include tablet {

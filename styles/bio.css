@@ -4,19 +4,19 @@ body {
 
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/Font/AvenirNextLTPro-Bold.ttf") format "truetype", url("../../assets/Font/AvenirNextLTPro-Bold.woff") format "woff", url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format "woff2";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/Font/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../assets/Font/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/Font/AvenirNextLTPro-Demi.ttf") format("truetype"), url("../../assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2");
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/Font/AvenirNextLTPro-Demi.ttf") format("truetype"), url("../assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
@@ -203,7 +203,11 @@ li,
 .nav__item:hover {
   color: #fff;
   font-weight: 600;
+}
+.nav__item--active {
   border-bottom: 2px solid white;
+  color: #fff;
+  font-weight: 600;
 }
 
 .hero {
@@ -285,6 +289,10 @@ li,
 }
 .main__image-subtitle {
   padding: 1rem 0;
+  font-weight: 700;
+}
+.main__image-subtitle-author {
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .main__image-subtitle-author {
@@ -293,6 +301,7 @@ li,
 }
 .main__content-title {
   padding: 1.5rem 0 0.5rem 0;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .main__content-paragraph {
@@ -361,10 +370,10 @@ li,
   display: block;
   width: 100%;
   transition: all 0.5s ease;
+  filter: grayscale(1000%);
 }
 .gallery__image:hover {
-  -moz-filter: grayscale(100%);
-  filter: grayscale(1000%);
+  filter: grayscale(0%);
 }
 @media screen and (min-width: 768px) {
   .gallery__image {
