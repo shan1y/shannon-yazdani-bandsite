@@ -1,0 +1,62 @@
+@use "./partials/fonts" as *;
+@use "./partials/reset" as *;
+@use "./partials/typography" as *;
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+
+.hero {
+  background-image: url("../assets/Images/hero-shows.jpg");
+  background-size: cover;
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh;
+    @include container;
+
+    @media screen and (min-width: 500px) {
+      min-height: 35vh;
+    }
+
+    @include tablet {
+      min-height: 50vw;
+    }
+  }
+
+  &__title {
+    color: $primary-white;
+    z-index: 1;
+  }
+
+  &__subtitle {
+    @extend .hero__title;
+  }
+
+  &__soundtrack {
+    @extend .hero__title;
+    font-size: 10px;
+    color: #cccccc;
+    line-break: anywhere;
+    word-break: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+      Garuda, Verdana, Tahoma, sans-serif;
+    font-weight: 100;
+    z-index: 10;
+  }
+
+  &__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+}

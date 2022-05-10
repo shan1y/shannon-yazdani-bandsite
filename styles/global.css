@@ -138,173 +138,181 @@ li,
   }
 }
 
-.hero {
-  background-image: url("../assets/Images/hero-bio.jpg");
-  background-size: cover;
-  position: relative;
-}
-.hero__overlay {
-  position: absolute;
-  height: 100%;
+.header {
   width: 100%;
-  top: 50%;
-  left: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
-.hero__container {
+
+.nav {
+  background-color: #323232;
+}
+.nav__container {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+}
+@media screen and (min-width: 768px) {
+  .nav__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 62rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .nav__container {
+    padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__container {
+    max-width: 62rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) and (min-width: 768px) {
+  .nav__container {
+    padding-inline: 2rem;
+  }
+}
+.nav__title {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .nav__title {
+    margin: unset;
+    line-height: 4rem;
+    width: 20%;
+  }
+}
+.nav__list {
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__list {
+    width: 20%;
+    line-height: 4rem;
+    justify-content: space-between;
+  }
+}
+.nav__item {
   display: flex;
   align-items: center;
-  min-height: 25vh;
-  max-width: 62rem;
-  margin-inline: auto;
-  padding-inline: 1rem;
+  height: 100%;
+  justify-content: center;
 }
-@media screen and (min-width: 768px) {
-  .hero__container {
-    padding-inline: 2rem;
-  }
+
+.footer {
+  background-color: #323232;
 }
-@media screen and (min-width: 500px) {
-  .hero__container {
-    min-height: 35vh;
-  }
-}
-@media screen and (min-width: 768px) {
-  .hero__container {
-    min-height: 50vw;
-  }
-}
-.hero__title {
+.footer__container {
+  flex-direction: column;
+  background-color: #323232;
   color: #fff;
-  z-index: 1;
-}
-
-.main__container {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1rem;
-  max-width: 62rem;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .main__container {
-    padding-inline: 2rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .main__sub-container {
-    padding: 0 2rem;
-  }
-}
-.main__title {
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
-  max-width: 700;
-}
-@media screen and (min-width: 768px) {
-  .main__title {
-    padding-top: 3rem;
-    padding-bottom: 2.25rem;
-  }
-}
-.main__image {
   width: 100%;
-  margin: 0 auto;
-  padding-top: 0;
-}
-.main__image-subtitle {
-  padding: 1rem 0;
-  font-weight: 700;
-}
-.main__image-subtitle-author {
-  font-weight: 700;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .main__image-subtitle-author {
-    font-size: 1rem;
-  }
-}
-.main__content-title {
-  padding: 1.5rem 0 0.5rem 0;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  .main__content-paragraph {
-    display: flex;
-  }
-  .main__content-paragraph--top {
-    flex: 50%;
-    padding-right: 1rem;
+  .footer__container {
+    max-width: 62rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 768px) {
-  .main__content-paragraph--top {
-    padding-top: 1rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .main__content-paragraph--bottom {
-    flex: 50%;
-    padding-left: 1rem;
-  }
-}
-@media screen and (min-width: 768px) and (min-width: 768px) {
-  .main__content-paragraph--bottom {
-    padding-top: 1rem;
-  }
-}
-
-.gallery {
-  background-color: #fafafa;
-}
-.gallery__container {
-  display: flex;
-  flex-direction: column;
-  padding-block: 1rem;
-  max-width: 62rem;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .gallery__container {
+  .footer__container {
     padding-inline: 2rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .gallery__container {
-    padding-block: 3rem;
+  .footer-header__container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
-}
-.gallery__title {
-  padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .gallery__title {
-    padding-bottom: 1.5rem;
+  .footer-col__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 45rem;
   }
 }
-.gallery-image__container {
+.footer__logo--right {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo--right {
+    display: unset;
+    margin-left: auto;
+    padding-right: 0.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__title {
+    width: 31%;
+    max-width: 14rem;
+  }
+}
+.footer__col {
   display: flex;
   gap: 1rem;
-  justify-content: space-around;
-  flex-direction: row;
-  margin: 0rem;
-  flex-wrap: wrap;
-}
-.gallery__image {
-  display: block;
+  flex-direction: column;
   width: 100%;
-  transition: all 0.5s ease;
-  filter: grayscale(1000%);
-}
-.gallery__image:hover {
-  filter: grayscale(0%);
 }
 @media screen and (min-width: 768px) {
-  .gallery__image {
-    width: calc(33.33% - 1.5rem);
+  .footer__col {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    width: 40%;
   }
-}/*# sourceMappingURL=bio.css.map */
+}
+.footer__col--email {
+  margin-bottom: 1rem;
+}
+.footer__icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 8rem;
+  height: 4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transform: translateX(-0.2rem);
+}
+@media screen and (min-width: 768px) {
+  .footer__icons {
+    padding: 0 1rem;
+    display: flex;
+    max-width: 10rem;
+    width: 25%;
+    align-items: center;
+  }
+}
+.footer__col--name, .footer__col--org {
+  font-weight: 700;
+}
+.footer__logo--mobile {
+  padding-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo--mobile {
+    display: none;
+  }
+}
+.footer__copyright {
+  padding: 1rem 0 1rem 0;
+}/*# sourceMappingURL=global.css.map */
