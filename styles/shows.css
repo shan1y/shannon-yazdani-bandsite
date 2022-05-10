@@ -192,4 +192,8 @@ li,
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   z-index: 0;
+}
+
+.shows {
+  background-color: #2c2828;
 }/*# sourceMappingURL=shows.css.map */
