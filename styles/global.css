@@ -108,6 +108,9 @@ li,
   font-weight: 400;
 }
 
+.nav__item {
+  width: 100%;
+}
 .nav__item:hover {
   color: #fff;
   font-weight: 600;

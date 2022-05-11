@@ -108,6 +108,9 @@ li,
   font-weight: 400;
 }
 
+.nav__item {
+  width: 100%;
+}
 .nav__item:hover {
   color: #fff;
   font-weight: 600;
@@ -151,12 +154,11 @@ li,
   left: 50%;
   background-color: rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
 .hero__container {
   display: flex;
   align-items: center;
-  min-height: 25vh;
+  min-height: 30vh;
   max-width: 62rem;
   margin-inline: auto;
   padding-inline: 1rem;
@@ -307,4 +309,79 @@ li,
   .gallery__image {
     width: calc(33.33% - 1.5rem);
   }
+}
+
+.form__heading {
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+.form__container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: space-between;
+  height: 40vh;
+  width: 20rem;
+}
+.form__container--left {
+  display: flex;
+}
+.form__container--right {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.form__avatar-cropper {
+  height: 5rem;
+  width: 5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+.form__avatar {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  margin-left: -15%;
+}
+.form__name {
+  height: 2rem;
+}
+.form__comment {
+  height: 6rem;
+}
+.form__button {
+  background-color: black;
+  color: black;
+}
+
+.comments__container {
+  display: flex;
+  border-top: 2px solid silver;
+  padding: 1rem;
+}
+.comments__image-placeholder {
+  height: 50px;
+  width: 50px;
+  background-color: grey;
+  border-radius: 50%;
+  margin: 0 1rem 1rem 1rem;
+}
+.comments__section--right {
+  flex: 0.8;
+}
+.comments__text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+.comments__name {
+  font-weight: 700;
+}
+.comments__date {
+  color: silver;
 }/*# sourceMappingURL=bio.css.map */

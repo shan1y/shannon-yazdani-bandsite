@@ -17,13 +17,12 @@
     left: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
   }
 
   &__container {
     display: flex;
     align-items: center;
-    min-height: 25vh;
+    min-height: 30vh;
     @include container;
 
     @media screen and (min-width: 500px) {
@@ -155,5 +154,97 @@
     @include tablet {
       width: calc(33.33% - 1.5rem);
     }
+  }
+}
+
+.form {
+  &__heading {
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 1rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 40vh;
+    width: 20rem;
+
+    &--left {
+      display: flex;
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+
+      width: 90%;
+    }
+  }
+
+  &__avatar-cropper {
+    height: 5rem;
+    width: 5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+
+  &__avatar {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    margin-left: -15%;
+  }
+
+  &__name {
+    height: 2rem;
+  }
+
+  &__comment {
+    height: 6rem;
+  }
+
+  &__button {
+    background-color: black;
+    color: black;
+  }
+}
+
+.comments {
+  &__container {
+    display: flex;
+    border-top: 2px solid silver;
+    padding: 1rem;
+  }
+
+  &__image-placeholder {
+    height: 50px;
+    width: 50px;
+    background-color: grey;
+    border-radius: 50%;
+    margin: 0 1rem 1rem 1rem;
+  }
+
+  &__section--right {
+    flex: 0.8;
+  }
+
+  &__text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__date {
+    color: silver;
   }
 }
