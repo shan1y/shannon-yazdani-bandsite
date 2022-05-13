@@ -55,9 +55,9 @@ h1 {
 
 h2 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 32px;
-  color: #fff;
+  color: black;
 }
 @media screen and (min-width: 768px) {
   h2 {
@@ -71,7 +71,7 @@ h3 {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  color: #fff;
+  color: black;
 }
 @media screen and (min-width: 768px) {
   h3 {
@@ -127,6 +127,9 @@ li,
   padding-inline: 0.25rem;
   line-height: 1.25rem;
   font-weight: 700;
+}
+.footer__title {
+  color: white;
 }
 .footer__col, .footer__copyright {
   font-size: 13px;

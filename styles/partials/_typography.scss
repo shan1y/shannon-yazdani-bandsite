@@ -16,9 +16,9 @@ h1 {
 
 h2 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 32px;
-  color: $primary-white;
+  color: black;
 
   @include tablet {
     font-size: 36px;
@@ -31,8 +31,7 @@ h3 {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  color: $primary-white;
-
+  color: black;
   @include tablet {
     font-size: 24px;
     line-height: 32px;
@@ -89,6 +88,10 @@ li,
     padding-inline: 0.25rem;
     line-height: 1.25rem;
     font-weight: 700;
+  }
+
+  &__title {
+    color: white;
   }
 
   &__col,

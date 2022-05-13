@@ -55,9 +55,9 @@ h1 {
 
 h2 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 32px;
-  color: #fff;
+  color: black;
 }
 @media screen and (min-width: 768px) {
   h2 {
@@ -71,7 +71,7 @@ h3 {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  color: #fff;
+  color: black;
 }
 @media screen and (min-width: 768px) {
   h3 {
@@ -127,6 +127,9 @@ li,
   padding-inline: 0.25rem;
   line-height: 1.25rem;
   font-weight: 700;
+}
+.footer__title {
+  color: white;
 }
 .footer__col, .footer__copyright {
   font-size: 13px;
@@ -311,6 +314,9 @@ li,
   }
 }
 
+.form {
+  padding: 1rem;
+}
 .form__heading {
   color: black;
   font-size: 24px;
@@ -321,25 +327,29 @@ li,
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  justify-content: space-between;
-  height: 40vh;
-  width: 20rem;
+  height: 25vh;
+  width: auto;
 }
 .form__container--left {
   display: flex;
+  justify-content: center;
 }
 .form__container--right {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  flex: 1;
+}
+.form__container--right label:nth-child(3) {
+  padding-top: 1rem;
 }
 .form__avatar-cropper {
-  height: 5rem;
-  width: 5rem;
+  height: 2.5rem;
+  width: 2.5rem;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  margin-right: 2rem;
+  margin-right: 1rem;
+  top: 0.625rem;
 }
 .form__avatar {
   display: inline;
@@ -348,15 +358,32 @@ li,
   width: auto;
   margin-left: -15%;
 }
+.form__label-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  color: silver;
+}
 .form__name {
   height: 2rem;
+  text-indent: 1rem;
+  font-family: "Avenir Next";
 }
 .form__comment {
   height: 6rem;
+  text-indent: 1rem;
+  resize: none;
+  font-family: "Avenir Next";
+  padding-top: 0.5rem;
 }
 .form__button {
   background-color: black;
-  color: black;
+  color: white;
+  padding: 0.7rem 2rem 0.7rem 2rem;
+  border-radius: 0.2rem;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 1rem;
 }
 
 .comments__container {
@@ -365,14 +392,15 @@ li,
   padding: 1rem;
 }
 .comments__image-placeholder {
-  height: 50px;
-  width: 50px;
+  height: 2.5rem;
+  width: 2.5rem;
+  min-width: 2.5rem;
   background-color: grey;
   border-radius: 50%;
-  margin: 0 1rem 1rem 1rem;
+  margin-right: 1rem;
 }
 .comments__section--right {
-  flex: 0.8;
+  width: 100%;
 }
 .comments__text-wrapper {
   display: flex;
@@ -380,8 +408,11 @@ li,
   padding-bottom: 0.5rem;
 }
 .comments__name {
-  font-weight: 700;
+  font-weight: 600;
 }
 .comments__date {
   color: silver;
+}
+.comments__comment {
+  font-size: 14px;
 }/*# sourceMappingURL=bio.css.map */
