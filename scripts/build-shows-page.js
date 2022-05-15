@@ -149,7 +149,12 @@ showsData.forEach((item) => {
   showsInfoContainer.appendChild(showsInfoButton);
 
   showsInfoContainer.addEventListener("click", () => {
+    if (document.querySelector(".shows__container--selected")) {
+      document
+        .querySelector(".shows__container--selected")
+        .classList.remove("shows__container--selected");
+    }
     showsInfoContainer.classList.toggle("shows__container--selected");
-    showsInfoContainer.classList.toggle("shows__container--unselected");
+    showsInfoContainer.classList.add("shows__container--unselected");
   });
 });

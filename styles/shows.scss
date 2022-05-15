@@ -109,12 +109,12 @@
       padding-inline: 1rem;
     }
 
-    &--unselected:hover {
-      background-color: $secondary-alabaster;
-    }
-
     &--selected {
       background-color: $secondary-mercury;
+    }
+
+    &--unselected:not(.shows__container--selected):hover {
+      background-color: $secondary-alabaster;
     }
   }
 
