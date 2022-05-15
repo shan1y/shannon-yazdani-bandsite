@@ -89,18 +89,18 @@
     font-weight: 600;
   }
 
-  &__content-paragraph {
+  &__paragraphs {
     @include tablet {
       display: flex;
       gap: 2rem;
     }
+  }
 
-    &--top {
-      flex: 50%;
+  &__paragraph {
+    flex: 50%;
 
-      @include tablet {
-        padding-top: 1rem;
-      }
+    @include tablet {
+      padding-top: 1rem;
     }
   }
 }
@@ -273,11 +273,12 @@
     border: none;
     text-transform: uppercase;
     margin-top: 1rem;
-    height: 40px; //40 px on all sizes
+    height: 2.5rem;
+    cursor: pointer;
 
     @include tablet {
-      min-width: 150px; //min-width of 150px;
-      padding: 0 32px; //no less than 32px on left and right
+      min-width: 9.375rem;
+      padding: 0 2rem;
     }
   }
 }
@@ -319,10 +320,10 @@
   }
 
   &__date {
-    color: silver;
+    color: $primary-silver;
   }
 
   &__comment {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
