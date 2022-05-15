@@ -1,29 +1,34 @@
-const showsSection = document.querySelector(".shows-info");
+const showsMain = document.querySelector("main");
+
+const showsSection = document.createElement("ul");
+showsSection.classList.add("shows");
+
+showsMain.appendChild(showsSection);
 
 const showsSectionTitle = document.createElement("h2");
-showsSectionTitle.classList.add("shows-info__section-heading");
+showsSectionTitle.classList.add("shows__section-heading");
 showsSectionTitle.textContent = "Shows";
 
 showsSection.appendChild(showsSectionTitle);
 
-const showsHeadingMobileContainer = document.createElement("ul");
-showsHeadingMobileContainer.classList.add("shows-info__tablet");
+const showsHeadingMobileContainer = document.createElement("li");
+showsHeadingMobileContainer.classList.add("shows__tablet");
 
-const showsHeadingMobileDate = document.createElement("li");
-showsHeadingMobileDate.classList.add("shows-info__tablet-item");
+const showsHeadingMobileDate = document.createElement("p");
+showsHeadingMobileDate.classList.add("shows__tablet-item");
 showsHeadingMobileDate.textContent = "Date";
 
-const showsHeadingMobileVenue = document.createElement("li");
-showsHeadingMobileVenue.classList.add("shows-info__tablet-item");
+const showsHeadingMobileVenue = document.createElement("p");
+showsHeadingMobileVenue.classList.add("shows__tablet-item");
 showsHeadingMobileVenue.textContent = "Venue";
 
-const showsHeadingMobileLocation = document.createElement("li");
+const showsHeadingMobileLocation = document.createElement("p");
 showsHeadingMobileLocation.textContent = "Location";
-showsHeadingMobileLocation.classList.add("shows-info__tablet-item");
+showsHeadingMobileLocation.classList.add("shows__tablet-item");
 
-const showsHeadingMobileEmpty = document.createElement("li");
+const showsHeadingMobileEmpty = document.createElement("p");
 showsHeadingMobileEmpty.textContent = " ";
-showsHeadingMobileEmpty.classList.add("shows-info__tablet-item");
+showsHeadingMobileEmpty.classList.add("shows__tablet-item");
 
 showsSection.appendChild(showsHeadingMobileContainer);
 showsHeadingMobileContainer.appendChild(showsHeadingMobileDate);
@@ -72,26 +77,26 @@ let showsData = [
 
 showsData.forEach((item) => {
   //Create Element Container
-  const showsInfoContainer = document.createElement("ul");
-  showsInfoContainer.classList.add("shows-info__container");
-  showsInfoContainer.classList.add("shows-info__container--unselected");
+  const showsInfoContainer = document.createElement("li");
+  showsInfoContainer.classList.add("shows__container");
+  showsInfoContainer.classList.add("shows__container--unselected");
 
   //Append container to HTML section
   showsSection.appendChild(showsInfoContainer);
 
   //Create Date Group
   const showsInfoHeadingsContainer = document.createElement("div");
-  showsInfoHeadingsContainer.classList.add("shows-info__headings-container");
+  showsInfoHeadingsContainer.classList.add("shows__headings-container");
   showsInfoContainer.appendChild(showsInfoHeadingsContainer);
 
   //Create Date Title Element
-  const showsInfoDateHeading = document.createElement("li");
-  showsInfoDateHeading.classList.add("shows-info__heading");
+  const showsInfoDateHeading = document.createElement("p");
+  showsInfoDateHeading.classList.add("shows__heading");
   showsInfoDateHeading.textContent = "Date";
 
   //Get Date from Object
-  const showsInfoDate = document.createElement("li");
-  showsInfoDate.classList.add("shows-info__description--date");
+  const showsInfoDate = document.createElement("p");
+  showsInfoDate.classList.add("shows__description--date");
   showsInfoDate.textContent = item.date;
 
   //Append Date to container
@@ -100,17 +105,17 @@ showsData.forEach((item) => {
 
   //Creat Venue Group
   const VenueContainer = document.createElement("div");
-  VenueContainer.classList.add("shows-info__headings-container");
+  VenueContainer.classList.add("shows__headings-container");
   showsInfoContainer.appendChild(VenueContainer);
 
   //Create Venue Title Element
-  const showsInfoVenueHeading = document.createElement("li");
-  showsInfoVenueHeading.classList.add("shows-info__heading");
+  const showsInfoVenueHeading = document.createElement("p");
+  showsInfoVenueHeading.classList.add("shows__heading");
   showsInfoVenueHeading.textContent = "Venue";
 
   //Get Venue from Object
-  const showsInfoVenue = document.createElement("li");
-  showsInfoVenue.classList.add("shows-info__description");
+  const showsInfoVenue = document.createElement("p");
+  showsInfoVenue.classList.add("shows__description");
   showsInfoVenue.textContent = item.venue;
 
   //Append Venue to container
@@ -119,17 +124,17 @@ showsData.forEach((item) => {
 
   //Create Location Group
   const LocationContainer = document.createElement("div");
-  LocationContainer.classList.add("shows-info__headings-container");
+  LocationContainer.classList.add("shows__headings-container");
   showsInfoContainer.appendChild(LocationContainer);
 
   //Create Location Title Element
-  const showsInfoLocationHeading = document.createElement("li");
-  showsInfoLocationHeading.classList.add("shows-info__heading");
+  const showsInfoLocationHeading = document.createElement("p");
+  showsInfoLocationHeading.classList.add("shows__heading");
   showsInfoLocationHeading.textContent = "Location";
 
   //Get Location from Object
-  const showsInfoLocation = document.createElement("li");
-  showsInfoLocation.classList.add("shows-info__description");
+  const showsInfoLocation = document.createElement("p");
+  showsInfoLocation.classList.add("shows__description");
   showsInfoLocation.textContent = item.location;
 
   LocationContainer.appendChild(showsInfoLocationHeading);
@@ -137,15 +142,14 @@ showsData.forEach((item) => {
 
   //Create Button Element
   const showsInfoButton = document.createElement("button");
-  showsInfoButton.classList.add("shows-info__button");
+  showsInfoButton.classList.add("shows__button");
   showsInfoButton.textContent = "Buy Tickets";
 
   //Append button to container
   showsInfoContainer.appendChild(showsInfoButton);
 
   showsInfoContainer.addEventListener("click", () => {
-    console.log("i've been selected");
-    showsInfoContainer.classList.toggle("shows-info__container--selected");
-    showsInfoContainer.classList.toggle("shows-info__container--unselected");
+    showsInfoContainer.classList.toggle("shows__container--selected");
+    showsInfoContainer.classList.toggle("shows__container--unselected");
   });
 });

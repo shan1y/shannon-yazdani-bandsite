@@ -63,13 +63,13 @@
   }
 }
 
-.shows-info {
-  background-color: #ffffff;
+.shows {
+  background-color: $primary-white;
   margin-bottom: 1rem;
   max-width: 62rem;
   padding-inline: 1rem;
 
-  @media (min-width: $tablet-breakpoint) {
+  @include tablet {
     margin-inline: auto;
     padding-inline: 2rem;
   }
@@ -85,10 +85,12 @@
       flex-direction: row;
       justify-content: space-between;
       padding-inline: 1rem;
+      text-transform: uppercase;
 
       &-item {
         min-width: 10rem;
         padding-top: 2rem;
+        font-weight: 600;
       }
     }
   }
@@ -108,11 +110,11 @@
     }
 
     &--unselected:hover {
-      background-color: aliceblue;
+      background-color: $secondary-alabaster;
     }
 
     &--selected {
-      background-color: silver;
+      background-color: $secondary-mercury;
     }
   }
 
@@ -133,12 +135,12 @@
     padding-bottom: 1rem;
     min-width: 10rem;
 
-    @media (min-width: $tablet-breakpoint) {
+    @include tablet {
       padding-bottom: 0rem;
     }
 
     &--date {
-      @extend .shows-info__description;
+      @extend .shows__description;
       font-weight: 600;
     }
   }
@@ -148,13 +150,13 @@
     height: 3rem;
     width: 100%;
     text-transform: uppercase;
-    background-color: black;
+    background-color: $primary-bandsite-black;
     border: none;
     border-radius: 0.5rem;
     align-self: center;
     cursor: inherit;
 
-    @media (min-width: $tablet-breakpoint) {
+    @include tablet {
       max-width: 10rem;
     }
   }

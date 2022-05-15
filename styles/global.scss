@@ -113,7 +113,7 @@
     }
   }
 
-  &__col {
+  &-col {
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -126,7 +126,7 @@
       width: 40%;
     }
 
-    &--email {
+    &__email {
       margin-bottom: 1rem;
     }
   }
@@ -150,8 +150,8 @@
     }
   }
 
-  &__col--name,
-  &__col--org {
+  &-col__name,
+  &-col__org {
     font-weight: 700;
   }
 
