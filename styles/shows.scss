@@ -3,6 +3,7 @@
 @use "./partials/typography" as *;
 @use "./partials/colors" as *;
 @use "./partials/mixins" as *;
+@use "./partials/breakpoints" as *;
 
 .hero {
   background-image: url("../assets/Images/hero-shows.jpg");
@@ -57,10 +58,25 @@
 .shows-info {
   background-color: #ffffff;
   margin-bottom: 1rem;
+  max-width: 62rem;
+  margin-inline: auto;
 
   &__section-heading {
     color: black;
     padding: 1rem;
+  }
+  &__tablet {
+    display: none;
+    @media (min-width: $tablet-breakpoint) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 1rem;
+
+      &-item {
+        min-width: 10rem;
+      }
+    }
   }
 
   &__container {
@@ -68,6 +84,20 @@
     display: flex;
     flex-direction: column;
     padding: 1rem 1rem;
+    cursor: pointer;
+    justify-content: space-between;
+
+    @media (min-width: $tablet-breakpoint) {
+      flex-direction: row;
+    }
+
+    &--unselected:hover {
+      background-color: aliceblue;
+    }
+
+    &--selected {
+      background-color: silver;
+    }
   }
 
   &__heading {
@@ -76,11 +106,16 @@
     font-size: 12px;
     font-weight: 600;
     line-height: 20px;
+
+    @media (min-width: $tablet-breakpoint) {
+      display: none;
+    }
   }
 
   &__description {
     color: black;
     padding-bottom: 1rem;
+    min-width: 10rem;
 
     &--date {
       @extend .shows-info__description;
@@ -92,9 +127,15 @@
     color: white;
     height: 3rem;
     width: 90%;
+    text-transform: uppercase;
     background-color: black;
     border: none;
     border-radius: 0.5rem;
     align-self: center;
+    cursor: inherit;
+
+    @media (min-width: $tablet-breakpoint) {
+      max-width: 9rem;
+    }
   }
 }

@@ -1,4 +1,4 @@
-let commentsInfo = [
+const commentsInfo = [
   {
     name: "Connor Walton",
     date: "02/17/2021",
@@ -72,7 +72,9 @@ form.addEventListener("submit", (e) => {
   nameInput.value = "";
   commentInput.value = "";
 
-  commentsSectionAppended = document.querySelectorAll(".comments__container");
+  const commentsSectionAppended = document.querySelectorAll(
+    ".comments__container"
+  );
   commentsSectionAppended.forEach((container) => {
     container.remove();
   });

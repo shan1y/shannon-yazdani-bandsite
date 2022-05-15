@@ -3,6 +3,7 @@
 @use "./partials/typography" as *;
 @use "./partials/colors" as *;
 @use "./partials/mixins" as *;
+@use "./partials/breakpoints" as *;
 
 .hero {
   background-image: url("../assets/Images/hero-bio.jpg");
@@ -158,7 +159,13 @@
 }
 
 .form {
+  display: flex;
+  // max-width: 58rem;
   padding: 1rem;
+  flex-direction: column;
+  margin-inline: auto;
+  padding-inline: auto;
+
   &__heading {
     color: black;
     font-size: 24px;
@@ -168,9 +175,7 @@
   &__container {
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
-    //gap: 1rem;
-    //justify-content: space-between;
+
     height: 25vh;
     width: auto;
 
@@ -213,12 +218,19 @@
     font-size: 14px;
     font-weight: 600;
     color: silver;
+    margin-bottom: 4px;
   }
 
   &__name {
-    height: 2rem;
+    min-height: 36px;
     text-indent: 1rem;
     font-family: $font-stack;
+    border: 1px solid $secondary-mercury;
+    border-radius: 4px;
+
+    @media (min-width: $tablet-breakpoint) {
+      min-height: 48px;
+    }
   }
 
   &__comment {
@@ -226,17 +238,24 @@
     text-indent: 1rem;
     resize: none;
     font-family: $font-stack;
+    border: 1px solid $secondary-mercury;
     padding-top: 0.5rem;
+    border-radius: 4px;
   }
 
   &__button {
     background-color: black;
     color: white;
-    padding: 0.7rem 2rem 0.7rem 2rem;
     border-radius: 0.2rem;
     border: none;
     text-transform: uppercase;
     margin-top: 1rem;
+    height: 40px; //40 px on all sizes
+
+    @media (min-width: $tablet-breakpoint) {
+      min-width: 150px; //min-width of 150px;
+      padding: 0 32px; //no less than 32px on left and right
+    }
   }
 }
 
