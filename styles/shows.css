@@ -179,10 +179,20 @@ li,
   position: relative;
   padding: 0.5rem 0rem;
 }
+@media screen and (min-width: 768px) {
+  .hero__title, .hero__subtitle {
+    max-width: 33rem;
+  }
+}
 .hero__soundtrack {
   padding: 1rem 0rem;
   position: relative;
   border-radius: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .hero__soundtrack {
+    max-width: 33rem;
+  }
 }
 .hero__overlay {
   position: absolute;
@@ -198,37 +208,46 @@ li,
   background-color: #ffffff;
   margin-bottom: 1rem;
   max-width: 62rem;
-  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .shows-info {
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
 }
 .shows-info__section-heading {
   color: black;
-  padding: 1rem;
+  padding-top: 2rem;
 }
 .shows-info__tablet {
   display: none;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .shows-info__tablet {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 1rem;
+    padding-inline: 1rem;
   }
   .shows-info__tablet-item {
     min-width: 10rem;
+    padding-top: 2rem;
   }
 }
 .shows-info__container {
   border-bottom: 2px solid rgb(210, 210, 210);
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem;
+  padding: 1rem 0rem;
   cursor: pointer;
   justify-content: space-between;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .shows-info__container {
     flex-direction: row;
+    align-items: center;
+    padding-inline: 1rem;
   }
 }
 .shows-info__container--unselected:hover {
@@ -254,13 +273,18 @@ li,
   padding-bottom: 1rem;
   min-width: 10rem;
 }
+@media (min-width: 768px) {
+  .shows-info__description, .shows-info__description--date {
+    padding-bottom: 0rem;
+  }
+}
 .shows-info__description--date {
   font-weight: 600;
 }
 .shows-info__button {
   color: white;
   height: 3rem;
-  width: 90%;
+  width: 100%;
   text-transform: uppercase;
   background-color: black;
   border: none;
@@ -270,6 +294,6 @@ li,
 }
 @media (min-width: 768px) {
   .shows-info__button {
-    max-width: 9rem;
+    max-width: 10rem;
   }
 }/*# sourceMappingURL=shows.css.map */

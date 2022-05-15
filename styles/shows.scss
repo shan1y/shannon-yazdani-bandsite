@@ -32,6 +32,10 @@
     color: $primary-white;
     position: relative;
     padding: 0.5rem 0rem;
+
+    @include tablet {
+      max-width: 33rem;
+    }
   }
 
   &__subtitle {
@@ -42,6 +46,10 @@
     padding: 1rem 0rem;
     position: relative;
     border-radius: 0.5rem;
+
+    @include tablet {
+      max-width: 33rem;
+    }
   }
 
   &__overlay {
@@ -59,22 +67,28 @@
   background-color: #ffffff;
   margin-bottom: 1rem;
   max-width: 62rem;
-  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (min-width: $tablet-breakpoint) {
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
 
   &__section-heading {
     color: black;
-    padding: 1rem;
+    padding-top: 2rem;
   }
   &__tablet {
     display: none;
-    @media (min-width: $tablet-breakpoint) {
+    @include tablet {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding-left: 1rem;
+      padding-inline: 1rem;
 
       &-item {
         min-width: 10rem;
+        padding-top: 2rem;
       }
     }
   }
@@ -83,12 +97,14 @@
     border-bottom: 2px solid rgb(210, 210, 210);
     display: flex;
     flex-direction: column;
-    padding: 1rem 1rem;
+    padding: 1rem 0rem;
     cursor: pointer;
     justify-content: space-between;
 
-    @media (min-width: $tablet-breakpoint) {
+    @include tablet {
       flex-direction: row;
+      align-items: center;
+      padding-inline: 1rem;
     }
 
     &--unselected:hover {
@@ -117,6 +133,10 @@
     padding-bottom: 1rem;
     min-width: 10rem;
 
+    @media (min-width: $tablet-breakpoint) {
+      padding-bottom: 0rem;
+    }
+
     &--date {
       @extend .shows-info__description;
       font-weight: 600;
@@ -126,7 +146,7 @@
   &__button {
     color: white;
     height: 3rem;
-    width: 90%;
+    width: 100%;
     text-transform: uppercase;
     background-color: black;
     border: none;
@@ -135,7 +155,7 @@
     cursor: inherit;
 
     @media (min-width: $tablet-breakpoint) {
-      max-width: 9rem;
+      max-width: 10rem;
     }
   }
 }
