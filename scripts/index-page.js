@@ -20,8 +20,9 @@ const commentsInfo = [
 ];
 
 const commentsSection = document.querySelector(".comments");
-
 const form = document.querySelector("form");
+const nameInput = document.querySelector(".form__name");
+const commentInput = document.querySelector(".form__comment");
 
 function displayComments(commentsObject) {
   commentsInfo.forEach((info) => {
@@ -59,27 +60,40 @@ function displayComments(commentsObject) {
 }
 
 form.addEventListener("submit", (e) => {
-  const objName = e.target.userName.value;
-  const objComment = e.target.userComment.value;
-  const objDate = new Date().toLocaleDateString("en-US");
   e.preventDefault();
 
-  let newObject = { name: objName, date: objDate, comment: objComment };
-  commentsInfo.unshift(newObject);
+  const objName = e.target.userName.value;
+  const objComment = e.target.userComment.value;
 
-  const nameInput = document.getElementById("userName");
-  const commentInput = document.getElementById("userComment");
-  nameInput.value = "";
-  commentInput.value = "";
+  if (objName === "" && objComment == "") {
+    nameInput.classList.add("form__name--error");
+    commentInput.classList.add("form__comment--error");
+  } else if (objName == "" && objComment) {
+    nameInput.classList.add("form__name--error");
+    commentInput.classList.remove("form__comment--error");
+  } else if (objName && objComment == "") {
+    nameInput.classList.remove("form__name--error");
+    commentInput.classList.add("form__comment--error");
+  } else {
+    nameInput.classList.remove("form__name--error");
+    commentInput.classList.remove("form__comment--error");
+    const objDate = new Date().toLocaleDateString("en-US");
 
-  const commentsSectionAppended = document.querySelectorAll(
-    ".comments__container"
-  );
-  commentsSectionAppended.forEach((container) => {
-    container.remove();
-  });
+    let newObject = { name: objName, date: objDate, comment: objComment };
+    commentsInfo.unshift(newObject);
 
-  displayComments();
+    nameInput.value = "";
+    commentInput.value = "";
+
+    const commentsSectionAppended = document.querySelectorAll(
+      ".comments__container"
+    );
+    commentsSectionAppended.forEach((container) => {
+      container.remove();
+    });
+
+    displayComments();
+  }
 });
 
 displayComments();

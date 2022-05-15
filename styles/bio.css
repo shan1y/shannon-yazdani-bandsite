@@ -355,7 +355,7 @@ li,
 }
 @media screen and (min-width: 768px) {
   .form__avatar-cropper {
-    top: 1.58rem;
+    top: 1.63rem;
   }
 }
 .form__avatar {
@@ -380,6 +380,9 @@ li,
   border-radius: 0.25rem;
   background-color: #fafafa;
 }
+.form__name--error {
+  border: 1px solid red;
+}
 @media screen and (min-width: 768px) {
   .form__name {
     min-height: 3rem;
@@ -403,6 +406,9 @@ li,
   padding-top: 0.75rem;
   border-radius: 4px;
   background-color: #fafafa;
+}
+.form__comment--error {
+  border: 1px solid red;
 }
 .form__comment::-moz-placeholder {
   color: black;

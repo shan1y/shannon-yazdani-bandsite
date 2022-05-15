@@ -202,7 +202,7 @@
     top: 1.15rem;
 
     @include tablet {
-      top: 1.58rem;
+      top: 1.63rem;
     }
   }
 
@@ -230,6 +230,10 @@
     border-radius: 0.25rem;
     background-color: $secondary-alabaster;
 
+    &--error {
+      border: 1px solid red;
+    }
+
     @include tablet {
       min-height: 3rem;
     }
@@ -248,6 +252,10 @@
     padding-top: 0.75rem;
     border-radius: 4px;
     background-color: $secondary-alabaster;
+
+    &--error {
+      border: 1px solid red;
+    }
   }
 
   &__comment::placeholder {
