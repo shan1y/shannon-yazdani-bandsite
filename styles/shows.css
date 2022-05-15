@@ -100,27 +100,6 @@ a {
   color: #fff;
 }
 
-li,
-.nav__item {
-  color: #afafaf;
-  font-size: 0.8125rem;
-  line-height: 1.375rem;
-  font-weight: 400;
-}
-
-.nav__item {
-  width: 100%;
-}
-.nav__item:hover {
-  color: #fff;
-  font-weight: 600;
-}
-.nav__item--active {
-  border-bottom: 2px solid #fff;
-  color: #fff;
-  font-weight: 600;
-}
-
 .footer__icon {
   height: 1.5rem;
   width: 2rem;

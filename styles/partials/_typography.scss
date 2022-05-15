@@ -61,30 +61,6 @@ a {
   color: $primary-white;
 }
 
-li,
-.nav__item {
-  color: $primary-silver;
-  font-size: 0.8125rem;
-  line-height: 1.375rem;
-  font-weight: 400;
-}
-
-.nav {
-  &__item {
-    width: 100%;
-    @include hover {
-      color: $primary-white;
-      font-weight: 600;
-    }
-
-    &--active {
-      border-bottom: 2px solid $primary-white;
-      color: $primary-white;
-      font-weight: 600;
-    }
-  }
-}
-
 .footer {
   &__icon {
     height: 1.5rem;
