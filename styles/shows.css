@@ -211,6 +211,7 @@ a {
     text-transform: uppercase;
   }
   .shows__tablet-item {
+    color: #afafaf;
     min-width: 10rem;
     padding-top: 2rem;
     font-weight: 600;
