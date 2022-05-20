@@ -16,7 +16,6 @@ function loadComments() {
       );
 
       displayComments(response.data);
-      console.log(response.data);
     })
     .catch((err) => {
       console.log(err);
@@ -25,6 +24,17 @@ function loadComments() {
 
 //This function updates the HTML element contents when called.
 function displayComments(commentsObject) {
+  const commentsSectionAppended = document.querySelectorAll(
+    ".comments__container"
+  );
+
+  commentsSectionAppended.forEach((container) => {
+    container.remove();
+  });
+  createElements(commentsObject);
+}
+
+function createElements(commentsObject) {
   commentsObject.forEach((info) => {
     const commentsContainer = document.createElement("div");
     commentsContainer.classList.add("comments__container");
@@ -57,6 +67,34 @@ function displayComments(commentsObject) {
     commentsComment.classList.add("comments__comment");
     commentsComment.textContent = info.comment;
     commentsSectionRight.appendChild(commentsComment);
+
+    const commentsButtons = document.createElement("div");
+    commentsButtons.classList.add("comments__buttons");
+    commentsSectionRight.appendChild(commentsButtons);
+
+    const commentsLike = document.createElement("div");
+    commentsLike.classList.add("comments__like");
+    commentsButtons.appendChild(commentsLike);
+
+    const commentsTrash = document.createElement("div");
+    commentsTrash.classList.add("comments_trash");
+    commentsButtons.appendChild(commentsTrash);
+
+    const likeButton = document.createElement("button");
+    likeButton.classList.add("comments_like-button");
+    commentsLike.appendChild(likeButton);
+
+    const counter = document.createElement("i");
+    counter.classList.add("fa");
+    counter.classList.add("fa-thumb");
+    counter.setAttribute("aria-hidden", "true");
+    counter.setAttribute("id", "thumb");
+    counter.setAttribute("Click", "like()");
+    commentsLike.appendChild(counter);
+
+    const trashButton = document.createElement("button");
+    trashButton.classList.add("comments__trash-button");
+    commentsTrash.appendChild(trashButton);
   });
 }
 
@@ -65,15 +103,9 @@ function addComment(newObject) {
   return axios
     .post(`${BaseURL}/comments/?api_key=${apiKey}`, newObject)
     .then((response) => {
-      const commentsSectionAppended = document.querySelectorAll(
-        ".comments__container"
-      );
-      commentsSectionAppended.forEach((container) => {
-        container.remove();
-      });
-
       loadComments();
     })
+
     .catch((err) => {
       console.log(err);
     });

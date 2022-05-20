@@ -327,3 +327,35 @@
     font-size: 0.875rem;
   }
 }
+
+.comments__buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.comments_like-button {
+  background-image: url("../assets/Icons/SVG/favorite_black_24dp.svg");
+  height: 1.4rem;
+  width: 1.5rem;
+  background-repeat: no-repeat;
+  border-style: none;
+  background-color: transparent;
+  opacity: 50%;
+}
+
+.comments__trash-button {
+  background-image: url("../assets/Icons/SVG/delete_black_24dp.svg");
+  height: 1.4rem;
+  width: 1.2rem;
+  background-repeat: no-repeat;
+  border-style: none;
+  background-color: transparent;
+  opacity: 50%;
+}
+
+.fa-thumb {
+  height: 3rem;
+  width: 3rem;
+}
