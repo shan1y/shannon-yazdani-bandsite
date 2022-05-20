@@ -159,7 +159,7 @@
   flex-direction: column;
   margin-inline: auto;
   padding-inline: auto;
-
+  min-height: 19rem;
   @include tablet {
     max-width: 30rem;
   }
@@ -248,7 +248,7 @@
   }
 
   &__comment {
-    height: 6rem;
+    min-height: 8rem;
     text-indent: 1rem;
     resize: none;
     font-family: $font-stack;
@@ -273,7 +273,7 @@
     border: none;
     text-transform: uppercase;
     margin-top: 1rem;
-    height: 2.5rem;
+    min-height: 2.5rem;
     cursor: pointer;
 
     @include tablet {

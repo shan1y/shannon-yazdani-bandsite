@@ -293,6 +293,7 @@ a {
   flex-direction: column;
   margin-inline: auto;
   padding-inline: auto;
+  min-height: 19rem;
 }
 @media screen and (min-width: 768px) {
   .form {
@@ -382,7 +383,7 @@ a {
   color: black;
 }
 .form__comment {
-  height: 6rem;
+  min-height: 8rem;
   text-indent: 1rem;
   resize: none;
   font-family: "Avenir Next";
@@ -410,7 +411,7 @@ a {
   border: none;
   text-transform: uppercase;
   margin-top: 1rem;
-  height: 2.5rem;
+  min-height: 2.5rem;
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {

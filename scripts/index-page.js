@@ -1,31 +1,31 @@
-const commentsInfo = [
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    comment:
-      "I can't stop listening. Every Time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
-
 const commentsSection = document.querySelector(".comments");
 const form = document.querySelector("form");
 const nameInput = document.querySelector(".form__name");
 const commentInput = document.querySelector(".form__comment");
 
+const apiKey = "fa513836-10f7-42dc-bfeb-55ce0941005e";
+const BaseURL = "https://project-1-api.herokuapp.com";
+
+//Get request for comments. This gives us the argument to pass into "Display Comments"
+function loadComments() {
+  return axios
+    .get(`${BaseURL}/comments/?api_key=${apiKey}`)
+    .then(function (response) {
+      let receivedData = response.data.sort(
+        (a, b) => b.timestamp - a.timestamp
+      );
+
+      displayComments(response.data);
+      console.log(response.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+//This function updates the HTML element contents when called.
 function displayComments(commentsObject) {
-  commentsInfo.forEach((info) => {
+  commentsObject.forEach((info) => {
     const commentsContainer = document.createElement("div");
     commentsContainer.classList.add("comments__container");
     commentsSection.appendChild(commentsContainer);
@@ -49,7 +49,8 @@ function displayComments(commentsObject) {
 
     let commentsDate = document.createElement("div");
     commentsDate.classList.add("comments__date");
-    commentsDate.textContent = info.date;
+    info.timestamp = new Date(info.timestamp).toLocaleDateString();
+    commentsDate.textContent = info.timestamp;
     commentsSectionTextWrapper.appendChild(commentsDate);
 
     const commentsComment = document.createElement("div");
@@ -59,41 +60,53 @@ function displayComments(commentsObject) {
   });
 }
 
+//Post request to add new comments to API
+function addComment(newObject) {
+  return axios
+    .post(`${BaseURL}/comments/?api_key=${apiKey}`, newObject)
+    .then((response) => {
+      const commentsSectionAppended = document.querySelectorAll(
+        ".comments__container"
+      );
+      commentsSectionAppended.forEach((container) => {
+        container.remove();
+      });
+
+      loadComments();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+//Event listener for submission
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const objName = e.target.userName.value;
   const objComment = e.target.userComment.value;
 
-  if (objName === "" && objComment == "") {
+  if (objName.trim().length == 0 && objComment.trim().length === 0) {
     nameInput.classList.add("form__name--error");
     commentInput.classList.add("form__comment--error");
-  } else if (objName == "" && objComment) {
+  } else if (objName.trim().length == 0 && objComment) {
     nameInput.classList.add("form__name--error");
     commentInput.classList.remove("form__comment--error");
-  } else if (objName && objComment == "") {
+  } else if (objName && objComment.trim().length === 0) {
     nameInput.classList.remove("form__name--error");
     commentInput.classList.add("form__comment--error");
   } else {
     nameInput.classList.remove("form__name--error");
     commentInput.classList.remove("form__comment--error");
-    const objDate = new Date().toLocaleDateString("en-US");
 
-    let newObject = { name: objName, date: objDate, comment: objComment };
-    commentsInfo.unshift(newObject);
+    let newObject = { name: objName, comment: objComment };
+
+    addComment(newObject);
 
     nameInput.value = "";
     commentInput.value = "";
-
-    const commentsSectionAppended = document.querySelectorAll(
-      ".comments__container"
-    );
-    commentsSectionAppended.forEach((container) => {
-      container.remove();
-    });
-
-    displayComments();
   }
 });
 
-displayComments();
+//On page load, load comments.
+loadComments();
