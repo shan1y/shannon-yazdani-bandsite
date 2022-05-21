@@ -3,6 +3,8 @@ const form = document.querySelector("form");
 const nameInput = document.querySelector(".form__name");
 const commentInput = document.querySelector(".form__comment");
 
+let clicks = 0;
+
 const apiKey = "fa513836-10f7-42dc-bfeb-55ce0941005e";
 const BaseURL = "https://project-1-api.herokuapp.com";
 
@@ -15,6 +17,7 @@ function loadComments() {
         (a, b) => b.timestamp - a.timestamp
       );
 
+      console.log(response.data);
       displayComments(response.data);
     })
     .catch((err) => {
@@ -77,24 +80,51 @@ function createElements(commentsObject) {
     commentsButtons.appendChild(commentsLike);
 
     const commentsTrash = document.createElement("div");
-    commentsTrash.classList.add("comments_trash");
+    commentsTrash.classList.add("comments__trash");
     commentsButtons.appendChild(commentsTrash);
 
     const likeButton = document.createElement("button");
-    likeButton.classList.add("comments_like-button");
+    likeButton.classList.add("comments__like-buttons");
     commentsLike.appendChild(likeButton);
 
-    const counter = document.createElement("i");
-    counter.classList.add("fa");
-    counter.classList.add("fa-thumb");
-    counter.setAttribute("aria-hidden", "true");
-    counter.setAttribute("id", "thumb");
-    counter.setAttribute("Click", "like()");
-    commentsLike.appendChild(counter);
+    const likeCounter = document.createElement("span");
+    likeCounter.classList.add("comments__like-counter");
+    likeCounter.textContent = info.likes;
+
+    const likeIcon = document.createElement("div");
+    likeIcon.classList.add("comments__like-icon");
+
+    if (info.likes !== 0) {
+      likeCounter.classList.add("comments__like-counter--display");
+    }
+
+    likeIcon.addEventListener("click", () => {
+      let id = info.id;
+      let clicks = likeCounter.textContent;
+      clicks++;
+      likeCounter.classList.add("comments__like-counter--display");
+      likeCounter.textContent = clicks;
+      axios
+        .put(`${BaseURL}/comments/${id}/like/?api_key=${apiKey}`)
+        .then(function (response) {
+          likeCounter.textContent = response.data.likes;
+        });
+    });
+
+    likeButton.appendChild(likeIcon);
+    likeButton.appendChild(likeCounter);
 
     const trashButton = document.createElement("button");
     trashButton.classList.add("comments__trash-button");
     commentsTrash.appendChild(trashButton);
+    trashButton.addEventListener("click", () => {
+      let id = info.id;
+      axios
+        .delete(`${BaseURL}/comments/${id}?api_key=${apiKey}`)
+        .then(function (response) {
+          commentsContainer.remove();
+        });
+    });
   });
 }
 
