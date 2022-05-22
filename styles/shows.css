@@ -33,36 +33,37 @@ li {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   line-height: 2rem;
   color: #fff;
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 3.75rem;
+    font-size: 60px;
     line-height: 4.25rem;
     font-weight: 700;
   }
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   line-height: 2rem;
   color: #323232;
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 2.25rem;
+    font-size: 36px;
     line-height: 2rem;
     font-weight: 700;
   }
@@ -76,28 +77,24 @@ h3 {
 }
 @media screen and (min-width: 768px) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 24px;
     line-height: 2rem;
     font-weight: 600;
   }
 }
 
 p {
-  font-size: 0.8125rem;
+  font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
   padding: 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
   p {
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.375rem;
     font-weight: 400;
   }
-}
-
-a {
-  color: #fff;
 }
 
 .footer__icon {
@@ -111,13 +108,13 @@ a {
   color: white;
 }
 .footer-col, .footer__copyright {
-  font-size: 0.8125rem;
+  font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .footer-col, .footer__copyright {
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.25rem;
     font-weight: 400;
   }
@@ -143,6 +140,11 @@ a {
     padding-inline: 2rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero__container {
+    max-width: 68rem;
+  }
+}
 @media screen and (min-width: 500px) {
   .hero__container {
     min-height: 35vh;
@@ -163,14 +165,32 @@ a {
     max-width: 33rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero__title, .hero__subtitle {
+    max-width: 33rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__desktop-container {
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-100px);
+  }
+}
 .hero__soundtrack {
   padding: 1rem 0rem;
   position: relative;
   border-radius: 0.5rem;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .hero__soundtrack {
     max-width: 33rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__soundtrack {
+    flex: 0.8;
   }
 }
 .hero__overlay {
@@ -188,6 +208,19 @@ a {
   margin-bottom: 1rem;
   max-width: 62rem;
   padding-inline: 1rem;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows {
+    padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows {
+    max-width: 68rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .shows {
@@ -195,9 +228,20 @@ a {
     padding-inline: 2rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .shows__section-heading {
   color: black;
   padding-top: 2rem;
+}
+@media screen and (min-width: 1280px) {
+  .shows__section-heading {
+    width: 10rem;
+  }
 }
 .shows__tablet {
   display: none;
@@ -215,6 +259,11 @@ a {
     min-width: 10rem;
     padding-top: 2rem;
     font-weight: 600;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__section-container {
+    width: 50rem;
   }
 }
 .shows__container {
@@ -245,7 +294,7 @@ a {
   font-weight: 600;
   line-height: 20px;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .shows__heading {
     display: none;
   }

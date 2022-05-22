@@ -2,31 +2,31 @@
 @use "./colors" as *;
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   line-height: 2rem;
   color: $primary-white;
 
   @include tablet {
-    font-size: 3.75rem;
+    font-size: 60px;
     line-height: 4.25rem;
     font-weight: 700;
   }
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   line-height: 2rem;
   color: $primary-bandsite-black;
 
   @include tablet {
-    font-size: 2.25rem;
+    font-size: 36px;
     line-height: 2rem;
     font-weight: 700;
   }
@@ -38,27 +38,23 @@ h3 {
   font-weight: 600;
   color: black;
   @include tablet {
-    font-size: 1.5rem;
+    font-size: 24px;
     line-height: 2rem;
     font-weight: 600;
   }
 }
 
 p {
-  font-size: 0.8125rem;
+  font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
   padding: 0.5rem 0;
 
   @include tablet {
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.375rem;
     font-weight: 400;
   }
-}
-
-a {
-  color: $primary-white;
 }
 
 .footer {
@@ -76,12 +72,12 @@ a {
 
   &-col,
   &__copyright {
-    font-size: 0.8125rem;
+    font-size: 13px;
     line-height: 1.125rem;
     font-weight: 400;
 
     @include tablet {
-      font-size: 0.875rem;
+      font-size: 14px;
       line-height: 1.25rem;
       font-weight: 400;
     }

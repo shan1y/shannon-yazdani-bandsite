@@ -61,20 +61,27 @@
     width: 100%;
     justify-content: center;
     color: $primary-silver;
-    font-size: 0.8125rem;
+    font-size: 0.87rem;
     line-height: 1.375rem;
     font-weight: 400;
+    padding-bottom: 2px;
 
-    @include hover {
+    @include tablet {
+      font-size: 1rem;
+    }
+
+    &:hover:not(.nav__item--active) {
       color: $primary-white;
       border-bottom: 2px solid $primary-white;
       font-weight: 400;
+      padding-bottom: 0px;
     }
 
     &--active {
       border-bottom: 2px solid $primary-white;
       color: $primary-white;
       font-weight: 700;
+      padding-bottom: 0px;
     }
   }
 }

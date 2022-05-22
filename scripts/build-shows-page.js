@@ -6,7 +6,6 @@ function getShowDates() {
     .get(`${BaseURL}/showdates/?api_key=${apiKey}`)
     .then(function (response) {
       displayShowDates(response.data);
-      console.log(response.data);
     })
     .catch((err) => {
       console.log(err);
@@ -25,6 +24,10 @@ showsSectionTitle.classList.add("shows__section-heading");
 showsSectionTitle.textContent = "Shows";
 
 showsSection.appendChild(showsSectionTitle);
+
+const showsContainer = document.createElement("div");
+showsContainer.classList.add("shows__section-container");
+showsSection.appendChild(showsContainer);
 
 const showsHeadingMobileContainer = document.createElement("li");
 showsHeadingMobileContainer.classList.add("shows__tablet");
@@ -45,7 +48,7 @@ const showsHeadingMobileEmpty = document.createElement("p");
 showsHeadingMobileEmpty.textContent = " ";
 showsHeadingMobileEmpty.classList.add("shows__tablet-item");
 
-showsSection.appendChild(showsHeadingMobileContainer);
+showsContainer.appendChild(showsHeadingMobileContainer);
 showsHeadingMobileContainer.appendChild(showsHeadingMobileDate);
 showsHeadingMobileContainer.appendChild(showsHeadingMobileVenue);
 showsHeadingMobileContainer.appendChild(showsHeadingMobileLocation);
@@ -59,7 +62,7 @@ function displayShowDates(showsData) {
     showsInfoContainer.classList.add("shows__container--unselected");
 
     //Append container to HTML section
-    showsSection.appendChild(showsInfoContainer);
+    showsContainer.appendChild(showsInfoContainer);
 
     //Create Date Group
     const showsInfoHeadingsContainer = document.createElement("div");

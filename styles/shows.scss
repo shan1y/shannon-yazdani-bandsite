@@ -19,7 +19,7 @@
     justify-content: space-evenly;
     @include container;
 
-    @media screen and (min-width: 500px) {
+    @include midpoint {
       min-height: 35vh;
     }
 
@@ -36,6 +36,17 @@
     @include tablet {
       max-width: 33rem;
     }
+    @include desktop {
+      max-width: 33rem;
+    }
+  }
+
+  &__desktop-container {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-100px);
+    }
   }
 
   &__subtitle {
@@ -46,9 +57,14 @@
     padding: 1rem 0rem;
     position: relative;
     border-radius: 0.5rem;
+    width: 100%;
 
     @include tablet {
       max-width: 33rem;
+    }
+
+    @include desktop {
+      flex: 0.8;
     }
   }
 
@@ -68,15 +84,25 @@
   margin-bottom: 1rem;
   max-width: 62rem;
   padding-inline: 1rem;
+  @include container;
 
   @include tablet {
     margin-inline: auto;
     padding-inline: 2rem;
   }
 
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__section-heading {
     color: black;
     padding-top: 2rem;
+
+    @include desktop {
+      width: 10rem;
+    }
   }
   &__tablet {
     display: none;
@@ -93,6 +119,12 @@
         padding-top: 2rem;
         font-weight: 600;
       }
+    }
+  }
+
+  &__section-container {
+    @include desktop {
+      width: 50rem;
     }
   }
 
@@ -126,7 +158,7 @@
     font-weight: 600;
     line-height: 20px;
 
-    @media (min-width: $tablet-breakpoint) {
+    @include tablet {
       display: none;
     }
   }

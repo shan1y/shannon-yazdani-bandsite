@@ -2,9 +2,7 @@ const commentsSection = document.querySelector(".comments");
 const form = document.querySelector("form");
 const nameInput = document.querySelector(".form__name");
 const commentInput = document.querySelector(".form__comment");
-
 let clicks = 0;
-
 const apiKey = "fa513836-10f7-42dc-bfeb-55ce0941005e";
 const BaseURL = "https://project-1-api.herokuapp.com";
 
@@ -17,7 +15,6 @@ function loadComments() {
         (a, b) => b.timestamp - a.timestamp
       );
 
-      console.log(response.data);
       displayComments(response.data);
     })
     .catch((err) => {
@@ -123,6 +120,9 @@ function createElements(commentsObject) {
         .delete(`${BaseURL}/comments/${id}?api_key=${apiKey}`)
         .then(function (response) {
           commentsContainer.remove();
+        })
+        .catch((error) => {
+          console.log(err);
         });
     });
   });

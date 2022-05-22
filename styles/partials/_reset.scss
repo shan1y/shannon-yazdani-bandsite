@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,4 +13,5 @@ li {
 
 a {
   text-decoration: none;
+  color: $primary-white;
 }

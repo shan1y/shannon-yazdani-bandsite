@@ -12,6 +12,12 @@
   }
 }
 
+@mixin midpoint {
+  @media screen and (min-width: 500px) {
+    @content;
+  }
+}
+
 @mixin container {
   max-width: 62rem;
   margin-inline: auto;
@@ -19,6 +25,10 @@
 
   @include tablet {
     padding-inline: 2rem;
+  }
+
+  @include desktop {
+    max-width: 68rem;
   }
 }
 

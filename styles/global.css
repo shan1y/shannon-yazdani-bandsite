@@ -33,36 +33,37 @@ li {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   line-height: 2rem;
   color: #fff;
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 3.75rem;
+    font-size: 60px;
     line-height: 4.25rem;
     font-weight: 700;
   }
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   line-height: 2rem;
   color: #323232;
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 2.25rem;
+    font-size: 36px;
     line-height: 2rem;
     font-weight: 700;
   }
@@ -76,28 +77,24 @@ h3 {
 }
 @media screen and (min-width: 768px) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 24px;
     line-height: 2rem;
     font-weight: 600;
   }
 }
 
 p {
-  font-size: 0.8125rem;
+  font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
   padding: 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
   p {
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.375rem;
     font-weight: 400;
   }
-}
-
-a {
-  color: #fff;
 }
 
 .footer__icon {
@@ -111,13 +108,13 @@ a {
   color: white;
 }
 .footer-col, .footer__copyright {
-  font-size: 0.8125rem;
+  font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .footer-col, .footer__copyright {
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.25rem;
     font-weight: 400;
   }
@@ -196,19 +193,27 @@ a {
   width: 100%;
   justify-content: center;
   color: #afafaf;
-  font-size: 0.8125rem;
+  font-size: 0.87rem;
   line-height: 1.375rem;
   font-weight: 400;
+  padding-bottom: 2px;
 }
-.nav__item:hover {
+@media screen and (min-width: 768px) {
+  .nav__item {
+    font-size: 1rem;
+  }
+}
+.nav__item:hover:not(.nav__item--active) {
   color: #fff;
   border-bottom: 2px solid #fff;
   font-weight: 400;
+  padding-bottom: 0px;
 }
 .nav__item--active {
   border-bottom: 2px solid #fff;
   color: #fff;
   font-weight: 700;
+  padding-bottom: 0px;
 }
 
 .footer {
@@ -231,6 +236,11 @@ a {
 @media screen and (min-width: 768px) and (min-width: 768px) {
   .footer__container {
     padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .footer__container {
+    max-width: 68rem;
   }
 }
 @media screen and (min-width: 768px) {

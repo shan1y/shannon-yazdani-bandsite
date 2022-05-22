@@ -33,36 +33,37 @@ li {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   line-height: 2rem;
   color: #fff;
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 3.75rem;
+    font-size: 60px;
     line-height: 4.25rem;
     font-weight: 700;
   }
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   line-height: 2rem;
   color: #323232;
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 2.25rem;
+    font-size: 36px;
     line-height: 2rem;
     font-weight: 700;
   }
@@ -76,28 +77,24 @@ h3 {
 }
 @media screen and (min-width: 768px) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 24px;
     line-height: 2rem;
     font-weight: 600;
   }
 }
 
 p {
-  font-size: 0.8125rem;
+  font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
   padding: 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
   p {
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.375rem;
     font-weight: 400;
   }
-}
-
-a {
-  color: #fff;
 }
 
 .footer__icon {
@@ -111,13 +108,13 @@ a {
   color: white;
 }
 .footer-col, .footer__copyright {
-  font-size: 0.8125rem;
+  font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .footer-col, .footer__copyright {
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.25rem;
     font-weight: 400;
   }
@@ -150,6 +147,11 @@ a {
     padding-inline: 2rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero__container {
+    max-width: 68rem;
+  }
+}
 @media screen and (min-width: 500px) {
   .hero__container {
     min-height: 35vh;
@@ -176,6 +178,11 @@ a {
 @media screen and (min-width: 768px) {
   .main__container {
     padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__container {
+    max-width: 68rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -244,6 +251,11 @@ a {
 @media screen and (min-width: 768px) {
   .gallery__container {
     padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery__container {
+    max-width: 68rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -374,13 +386,13 @@ a {
   }
 }
 .form__name::-moz-placeholder {
-  color: black;
+  color: #323232;
 }
 .form__name:-ms-input-placeholder {
-  color: black;
+  color: #323232;
 }
 .form__name::placeholder {
-  color: black;
+  color: #323232;
 }
 .form__comment {
   min-height: 8rem;
@@ -393,16 +405,16 @@ a {
   background-color: #fafafa;
 }
 .form__comment--error {
-  border: 1px solid red;
+  border: 1px solid #f00;
 }
 .form__comment::-moz-placeholder {
-  color: black;
+  color: #323232;
 }
 .form__comment:-ms-input-placeholder {
-  color: black;
+  color: #323232;
 }
 .form__comment::placeholder {
-  color: black;
+  color: #323232;
 }
 .form__button {
   background-color: #323232;
@@ -425,7 +437,7 @@ a {
   padding: 1rem;
   margin-inline: auto;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .comments {
     max-width: 30rem;
   }
@@ -460,14 +472,12 @@ a {
 .comments__comment {
   font-size: 0.875rem;
 }
-
 .comments__buttons {
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding-top: 1rem;
 }
-
 .comments__like-buttons {
   background-color: transparent;
   border-style: none;
@@ -475,7 +485,6 @@ a {
   justify-content: center;
   align-items: center;
 }
-
 .comments__trash-button {
   background-image: url("../assets/Icons/SVG/delete_black_24dp.svg");
   height: 1.4rem;
@@ -488,7 +497,9 @@ a {
   padding: 1rem;
   cursor: pointer;
 }
-
+.comments__trash-button:hover {
+  opacity: 100%;
+}
 .comments__like-icon {
   background-image: url("../assets/Icons/SVG/favorite_black_24dp.svg");
   height: 1.5rem;
@@ -503,14 +514,12 @@ a {
   background-image: url("../assets/Icons/SVG/favorite_red_24dp.svg");
   opacity: 75%;
 }
-
-.comments__like-counter, .comments__like-counter--display {
+.comments__like-counter {
   transform: translateY(1px);
   padding: 0rem 0.5rem;
   display: none;
   color: #afafaf;
 }
-
 .comments__like-counter--display {
   display: unset;
 }/*# sourceMappingURL=bio.css.map */
