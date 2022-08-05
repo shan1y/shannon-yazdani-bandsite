@@ -74,11 +74,9 @@
 
   &__image-subtitle {
     padding: 1rem 0;
-    font-weight: 700;
   }
 
   &__image-author {
-    font-weight: 700;
     @include tablet {
       font-size: 1rem;
     }
