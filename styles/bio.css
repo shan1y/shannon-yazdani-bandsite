@@ -208,10 +208,6 @@ p {
 }
 .main__image-subtitle {
   padding: 1rem 0;
-  font-weight: 700;
-}
-.main__image-author {
-  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .main__image-author {
