@@ -59,7 +59,6 @@ function displayShowDates(showsData) {
     //Create Element Container
     const showsInfoContainer = document.createElement("li");
     showsInfoContainer.classList.add("shows__container");
-    showsInfoContainer.classList.add("shows__container--unselected");
 
     //Append container to HTML section
     showsContainer.appendChild(showsInfoContainer);
@@ -137,7 +136,6 @@ function displayShowDates(showsData) {
           .classList.remove("shows__container--selected");
       }
       showsInfoContainer.classList.toggle("shows__container--selected");
-      showsInfoContainer.classList.add("shows__container--unselected");
     });
   });
 }

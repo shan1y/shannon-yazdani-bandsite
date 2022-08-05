@@ -135,6 +135,9 @@
     padding: 1rem 0rem;
     cursor: pointer;
     justify-content: space-between;
+    &:not(.shows__container--selected):hover {
+      background-color: $secondary-alabaster;
+      }
 
     @include tablet {
       flex-direction: row;
@@ -144,10 +147,7 @@
 
     &--selected {
       background-color: $secondary-mercury;
-    }
-
-    &--unselected:not(.shows__container--selected):hover {
-      background-color: $secondary-alabaster;
+      
     }
   }
 

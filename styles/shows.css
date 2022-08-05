@@ -274,6 +274,9 @@ p {
   cursor: pointer;
   justify-content: space-between;
 }
+.shows__container:not(.shows__container--selected):hover {
+  background-color: #fafafa;
+}
 @media screen and (min-width: 768px) {
   .shows__container {
     flex-direction: row;
@@ -283,9 +286,6 @@ p {
 }
 .shows__container--selected {
   background-color: #e1e1e1;
-}
-.shows__container--unselected:not(.shows__container--selected):hover {
-  background-color: #fafafa;
 }
 .shows__heading {
   color: silver;
