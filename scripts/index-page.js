@@ -97,10 +97,7 @@ function createElements(commentsObject) {
 
     likeIcon.addEventListener("click", () => {
       let id = info.id;
-      let clicks = likeCounter.textContent;
-      clicks++;
       likeCounter.classList.add("comments__like-counter--display");
-      likeCounter.textContent = clicks;
       axios
         .put(`${BaseURL}/comments/${id}/like/?api_key=${apiKey}`)
         .then(function (response) {
