@@ -435,6 +435,8 @@ p {
   .form__button {
     min-width: 9.375rem;
     padding: 0 2rem;
+    width: 12rem;
+    align-self: flex-end;
   }
 }
 
