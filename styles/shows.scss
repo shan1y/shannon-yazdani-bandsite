@@ -97,6 +97,7 @@
   &__section-heading {
     color: black;
     padding-top: 2rem;
+    padding-left:1rem;
 
     @include desktop {
       width: 10rem;
@@ -148,6 +149,7 @@
     &-buffer{
       justify-content: space-between;
       display: flex;
+      flex-direction: column;
       padding-inline:1rem;
       @include tablet {
         flex-direction: row;

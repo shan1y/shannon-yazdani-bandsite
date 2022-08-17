@@ -227,6 +227,7 @@ p {
 .shows__section-heading {
   color: black;
   padding-top: 2rem;
+  padding-left: 1rem;
 }
 @media screen and (min-width: 1280px) {
   .shows__section-heading {
@@ -272,6 +273,7 @@ p {
 .shows__container-buffer {
   justify-content: space-between;
   display: flex;
+  flex-direction: column;
   padding-inline: 1rem;
 }
 @media screen and (min-width: 768px) {
