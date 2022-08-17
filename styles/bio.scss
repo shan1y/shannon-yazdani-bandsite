@@ -26,7 +26,7 @@
     min-height: 30vh;
     @include container;
 
-    @include midpoint{
+    @include midpoint {
       min-height: 35vh;
     }
 
@@ -67,9 +67,17 @@
   }
 
   &__image {
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 0;
+     width: 100%;
+    clip-path: inset(0 0 2rem 0);
+    max-height:20rem;
+    
+    @include tablet {
+    max-height:29rem;}
+
+    @include desktop {
+      max-height: 35rem;
+    }
+    
   }
 
   &__image-subtitle {
@@ -159,7 +167,7 @@
   padding-inline: auto;
   min-height: 19rem;
   @include tablet {
-    max-width: 30rem;
+    max-width: 43rem;
   }
 
   &__heading {
@@ -277,7 +285,7 @@
     @include tablet {
       min-width: 9.375rem;
       padding: 0 2rem;
-      width:12rem;
+      width: 12rem;
       align-self: flex-end;
     }
   }
@@ -288,7 +296,7 @@
   margin-inline: auto;
 
   @include tablet {
-    max-width: 30rem;
+    max-width: 43rem;
   }
 
   &__container {

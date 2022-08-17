@@ -82,13 +82,11 @@
 .shows {
   background-color: $primary-white;
   margin-bottom: 1rem;
-  max-width: 62rem;
-  padding-inline: 1rem;
-  @include container;
+  max-width: 65rem;
+  padding:0;
 
   @include tablet {
     margin-inline: auto;
-    padding-inline: 2rem;
   }
 
   @include desktop {
@@ -128,28 +126,37 @@
     }
   }
 
+  
+
   &__container {
     border-bottom: 2px solid rgb(210, 210, 210);
     display: flex;
     flex-direction: column;
     padding: 1rem 0rem;
     cursor: pointer;
-    justify-content: space-between;
+  
     &:not(.shows__container--selected):hover {
       background-color: $secondary-alabaster;
       }
 
-    @include tablet {
-      flex-direction: row;
-      align-items: center;
-      padding-inline: 1rem;
-    }
+    
 
     &--selected {
       background-color: $secondary-mercury;
       
     }
+    &-buffer{
+      justify-content: space-between;
+      display: flex;
+      padding-inline:1rem;
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
   }
+
+
 
   &__heading {
     color: silver;
@@ -165,7 +172,6 @@
 
   &__description {
     color: black;
-    padding-bottom: 1rem;
     min-width: 10rem;
 
     @include tablet {

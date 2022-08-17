@@ -1,12 +1,10 @@
 @use "./colors" as *;
 
-html {
-  box-sizing: border-box;
-}
+
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 body {
   margin: 0;

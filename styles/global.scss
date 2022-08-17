@@ -46,6 +46,9 @@
     justify-content: space-around;
     height: 100%;
     align-items: center;
+    margin:0;
+    padding-inline-start: 0;
+  
 
     @include tablet {
       width: 20%;

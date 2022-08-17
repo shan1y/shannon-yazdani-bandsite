@@ -20,14 +20,10 @@ body {
   font-weight: 600;
   font-style: normal;
 }
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
@@ -96,7 +92,6 @@ p {
   font-size: 13px;
   line-height: 1.125rem;
   font-weight: 400;
-  padding: 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
   p {
@@ -215,26 +210,12 @@ p {
 .shows {
   background-color: #fff;
   margin-bottom: 1rem;
-  max-width: 62rem;
-  padding-inline: 1rem;
-  max-width: 62rem;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .shows {
-    padding-inline: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .shows {
-    max-width: 68rem;
-  }
+  max-width: 65rem;
+  padding: 0;
 }
 @media screen and (min-width: 768px) {
   .shows {
     margin-inline: auto;
-    padding-inline: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -281,20 +262,23 @@ p {
   flex-direction: column;
   padding: 1rem 0rem;
   cursor: pointer;
-  justify-content: space-between;
 }
 .shows__container:not(.shows__container--selected):hover {
   background-color: #fafafa;
 }
-@media screen and (min-width: 768px) {
-  .shows__container {
-    flex-direction: row;
-    align-items: center;
-    padding-inline: 1rem;
-  }
-}
 .shows__container--selected {
   background-color: #e1e1e1;
+}
+.shows__container-buffer {
+  justify-content: space-between;
+  display: flex;
+  padding-inline: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__container-buffer {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .shows__heading {
   color: silver;
@@ -310,7 +294,6 @@ p {
 }
 .shows__description, .shows__description--date {
   color: black;
-  padding-bottom: 1rem;
   min-width: 10rem;
 }
 @media screen and (min-width: 768px) {

@@ -59,14 +59,17 @@ function displayShowDates(showsData) {
     //Create Element Container
     const showsInfoContainer = document.createElement("li");
     showsInfoContainer.classList.add("shows__container");
-
     //Append container to HTML section
     showsContainer.appendChild(showsInfoContainer);
+
+    const showsChildContainer = document.createElement("div");
+    showsChildContainer.classList.add("shows__container-buffer");
+    showsInfoContainer.appendChild(showsChildContainer);
 
     //Create Date Group
     const showsInfoHeadingsContainer = document.createElement("div");
     showsInfoHeadingsContainer.classList.add("shows__headings-container");
-    showsInfoContainer.appendChild(showsInfoHeadingsContainer);
+    showsChildContainer.appendChild(showsInfoHeadingsContainer);
 
     //Create Date Title Element
     const showsInfoDateHeading = document.createElement("p");
@@ -87,7 +90,7 @@ function displayShowDates(showsData) {
     //Creat Venue Group
     const VenueContainer = document.createElement("div");
     VenueContainer.classList.add("shows__headings-container");
-    showsInfoContainer.appendChild(VenueContainer);
+    showsChildContainer.appendChild(VenueContainer);
 
     //Create Venue Title Element
     const showsInfoVenueHeading = document.createElement("p");
@@ -106,7 +109,7 @@ function displayShowDates(showsData) {
     //Create Location Group
     const LocationContainer = document.createElement("div");
     LocationContainer.classList.add("shows__headings-container");
-    showsInfoContainer.appendChild(LocationContainer);
+    showsChildContainer.appendChild(LocationContainer);
 
     //Create Location Title Element
     const showsInfoLocationHeading = document.createElement("p");
@@ -127,7 +130,7 @@ function displayShowDates(showsData) {
     showsInfoButton.textContent = "Buy Tickets";
 
     //Append button to container
-    showsInfoContainer.appendChild(showsInfoButton);
+    showsChildContainer.appendChild(showsInfoButton);
 
     showsInfoContainer.addEventListener("click", () => {
       if (document.querySelector(".shows__container--selected")) {
